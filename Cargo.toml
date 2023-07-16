@@ -1,0 +1,28 @@
+[package]
+name = "rus-tedis"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+prost = "0.10.4"
+bytes = "1"
+tracing = "0.1"
+thiserror = "1.0"
+dashmap = "5.4.0"
+http = "0.2"
+flate2 = "1"
+tokio = { version = "1", features = ["full"] } # async runtime
+
+
+[dev-dependencies]
+anyhow = "1" # error handling
+async-prost = "0.4" # Wrap protobuf to TCP frame
+futures = "0.3" # Stream trait
+tokio-tower = "0.6.0"
+tracing-subscriber = "0.3.17" # log handler
+tokio-util = { version = "0.7.8", features = ["codec"]}
+
+[build-dependencies]
+prost-build = "0.8"
